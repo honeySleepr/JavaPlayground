@@ -1,3 +1,5 @@
+package hashcode;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Objects;
@@ -39,7 +41,7 @@ class Point {
 	public Point(int a, int b) {
 		this.a = a;
 		this.b = b;
-		System.out.println("Point hash : " + this.hashCode());
+		System.out.println("hashcode.Point hash : " + this.hashCode());
 		System.out.println(
 			Integer.toHexString(System.identityHashCode(this))); // 객체 교유의 값을 출력(hashCode를 오버라이딩 해도 변하지 않음)
 	}
@@ -64,7 +66,7 @@ class Point {
 
 		@Override
 		public String toString() {
-			return "Point{" +
+			return "hashcode.Point{" +
 				   "a=" + a +
 				   ", b=" + b +
 				   '}';

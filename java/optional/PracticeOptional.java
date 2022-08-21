@@ -1,3 +1,5 @@
+package optional;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -36,7 +38,7 @@ public class PracticeOptional {
 
         /* 값 반환 / 에러 발생 (+ 기타 메서드 실행 가능) */
         User userOptTest9 = userOpt.orElseThrow(() -> new IllegalStateException("Empty user!"));
-        User userOptTest10 = emptyOpt.orElseThrow(() -> {
+        User userOptTest10 = userOpt.orElseThrow(() -> {
             increaseErrorCount();
             new User("bc"); //의미는 없지만..호출 가능
             throw new IllegalStateException();
@@ -84,19 +86,18 @@ public class PracticeOptional {
         users.add(user);
     }
 
-}
+    class User {
+        private String name;
 
-class User {
-    private String name;
+        public User(String name) {
+            this.name = name;
+        }
 
-    public User(String name) {
-        this.name = name;
-    }
+        public User() {
+        }
 
-    public User() {
-    }
-
-    public String getName() {
-        return name;
+        public String getName() {
+            return name;
+        }
     }
 }

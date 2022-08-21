@@ -1,3 +1,5 @@
+package priorityqueue;
+
 import java.util.PriorityQueue;
 
 public class PracticePriorityQueue {

@@ -1,3 +1,5 @@
+package interfaces;
+
 public interface PracticeInterface {
 	String NAME = "BC"; /* `public static final`이 자동으로 붙는다 */
 

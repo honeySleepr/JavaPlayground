@@ -13,12 +13,12 @@
 > 
 예를 들어 아래와 같은 클래스가 있을 때
 ```java
-class Point{
+class hashcode.Point{
     private int a;
     private int b;
 }
 ```  
-우리는 `Point p1 = Point(1,1)` 와  `Point p2 = Point(1,1)` 는 상태(a,b)가 같기 때문에 서로  같다고 판단되기를 원한다고 하자
+우리는 `hashcode.Point p1 = hashcode.Point(1,1)` 와  `hashcode.Point p2 = hashcode.Point(1,1)` 는 상태(a,b)가 같기 때문에 서로  같다고 판단되기를 원한다고 하자
 
 ### hashCode()를 오버라이딩 해주지 않으면?
 **객체의 주소값 만으로 해쉬를 만든다**. 그렇기 때문에 객체의 상태(a,b)가 같더라도 해쉬값은 서로 다르게 된다. 그러면 HashSet에 넣게될 경우에 중복으로 걸러지지 않으며,
