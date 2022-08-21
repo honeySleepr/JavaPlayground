@@ -7,7 +7,7 @@ public class MainClass implements PracticeInterface {
 		System.out.println(NAME);
 		m.abstractMethods();
 		m.defaultMethods(); // 내부에서 private 메서드 실행
-		staticMethods();
+		PracticeInterface.staticMethods();
 	}
 
 	@Override
