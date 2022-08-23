@@ -3,7 +3,7 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import java.util.Arrays;
 import org.junit.jupiter.api.Test;
 
-public class PracticeQuickSort {
+public class QuickSort {
 
 	public int[] solution(int[] arr) {
 		quickSort(arr, 0, arr.length - 1);
@@ -42,23 +42,24 @@ public class PracticeQuickSort {
 		}
 		return start;
 	}
-}
 
-class TestPracticeQuickSort {
+	static class TestQuickSort {
 
-	private final PracticeQuickSort p = new PracticeQuickSort();
+		private final QuickSort p = new QuickSort();
 
-	@Test
-	void 입력_1() {
-		int[] arr = {2, 6, 7, 5, 9, 0, 1, 4, 3, 8};
-		Arrays.sort(arr);
-		assertArrayEquals(arr, p.solution(new int[]{2, 6, 7, 5, 9, 0, 1, 4, 3, 8}));
+		@Test
+		void 입력_1() {
+			int[] arr = {2, 6, 7, 5, 9, 0, 1, 4, 3, 8};
+			Arrays.sort(arr);
+			assertArrayEquals(arr, p.solution(new int[]{2, 6, 7, 5, 9, 0, 1, 4, 3, 8}));
+		}
+
+		@Test
+		void 입력_2() {
+			int[] arr = {5, 2, 3, 1, 4, 2, 1, 7};
+			Arrays.sort(arr);
+			assertArrayEquals(arr, p.solution(new int[]{5, 2, 3, 1, 4, 2, 1, 7}));
+		}
 	}
 
-	@Test
-	void 입력_2() {
-		int[] arr = {5, 2, 3, 1, 4, 2, 1, 7};
-		Arrays.sort(arr);
-		assertArrayEquals(arr, p.solution(new int[]{5, 2, 3, 1, 4, 2, 1, 7}));
-	}
 }
