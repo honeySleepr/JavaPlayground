@@ -3,4 +3,6 @@
 *.iml
 out/
 
-practicejpa/
+java/enums/
+objectbook/
+java/PracticeString.java
