@@ -1,7 +1,6 @@
 package stream;
 
 import java.util.*;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -55,16 +54,42 @@ public class PracticeStream {
 
 
 		/*------------------groupingBy()-------------------*/
+		List<String[]> listOfArrays = new ArrayList<>(List.of(
+			new String[]{"wolf", "1반"},
+			new String[]{"cat", "2반"},
+			new String[]{"dog", "3반"},
+			new String[]{"lion", "1반"},
+			new String[]{"ryan", "2반"}));
 
-		//		Stream<String[]> stream = Stream.of(
-		//			new String[]{"CAR", "Audi"},
-		//			new String[]{"BIKE", "Harley Davidson"});
+		Map<String, List<String[]>> groupingByCollect1 = listOfArrays.stream()
+			.collect(Collectors.groupingBy(
+				strings -> strings[1])); //  3반 = [{dog,3반}] 2반 = [{cat,2반}, {ryan,2반}] 1반 =[{wolf,1반},{lion, 1반}]
 
-		Map<Integer, Long> collect5 = list.stream()
-			.collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-		System.out.println(collect5.entrySet());
+		/* 위와 같다 */
+		Map<String, List<String[]>> groupingByCollect2_1 = listOfArrays.stream()
+			.collect(Collectors.groupingBy(strings -> strings[1],
+				Collectors.toList())); /* Collectors.toCollection(LinkedList::new) 형태로 다른 컬렉션 인스턴스를 줄 수도 있다 */
 
-		/*------------------toMap(), groupingBy() 활용 비교-------------------*/
+		Map<String, Set<String>> groupingByCollect2_2 = listOfArrays.stream()
+			.collect(Collectors.groupingBy(strings -> strings[1],
+				Collectors.mapping(strings -> strings[0],
+					Collectors.toSet()))); // [3반=[dog], 2반=[ryan, cat], 1반=[wolf, lion]]
+
+		Map<String, Long> groupingByCollect2_3 = listOfArrays.stream()
+			.collect(Collectors.groupingBy(strings -> strings[1], Collectors.counting()));
+		Map<String, Map<String, Integer>> map = new HashMap<>();
+
+		/* 이런 2중 맵도 만들 수는 있다.. */
+		Map<String, Map<String, List<String[]>>> groupingByCollect2_4 = listOfArrays.stream()
+			.collect(Collectors.groupingBy(strings -> strings[0], Collectors.groupingBy(strings -> strings[1])));
+
+		System.out.println("1 : " + groupingByCollect1.entrySet());
+		System.out.println("2_1 : " + groupingByCollect2_1.entrySet());
+		System.out.println("2_2 : " + groupingByCollect2_2.entrySet());
+		System.out.println("2_3 : " + groupingByCollect2_3.entrySet());
+		System.out.println("2_4 : " + groupingByCollect2_4.entrySet());
+
+		/*------------------toMap(), groupingBy() 같은 결과 다른 느낌 -------------------*/
 		String[][] input = {{"a", "A"}, {"b", "B"}, {"c", "A"}};
 
 		int result1 = Arrays.stream(input)
