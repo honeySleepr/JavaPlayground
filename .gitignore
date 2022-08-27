@@ -2,7 +2,3 @@
 .DS_Store
 *.iml
 out/
-
-java/enums/
-objectbook/
-java/PracticeString.java
