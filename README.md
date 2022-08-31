@@ -18,7 +18,7 @@
 
 * [Mock, Spy 무슨 차이지?](https://github.com/honeySleepr/JavaPlayground/tree/main/test/mockspy)
 
-* [@ParameterizedTest](https://github.com/honeySleepr/JavaPlayground/blob/main/test/ParameterizedTestAnnotationTest.java)
+* [@ParameterizedTest](https://github.com/honeySleepr/JavaPlayground/blob/main/test/parameterizedtest)
 
 ### Algorithm 
 
@@ -27,4 +27,3 @@
 * [MergeSort](https://github.com/honeySleepr/JavaPlayground/blob/main/algorithm/MergeSort.java)
 
 * [QuickSort](https://github.com/honeySleepr/JavaPlayground/blob/main/algorithm/QuickSort.java)
-

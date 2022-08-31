@@ -1,3 +1,5 @@
+package parameterizedtest;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.stream.Stream;
@@ -9,9 +11,9 @@ import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 /**
- * <h2>쿠킴한테 추천 받은 <a href="https://www.youtube.com/watch?v=5PDYHNCcjYM">최범균님의 TDD 연습</a>과<br>@ParameterizedTest,
- * @MethodSource를
- * 함께 연습<br> 참고: <a href="https://www.baeldung.com/parameterized-tests-junit-5">Baeldung</a> </h2>
+ * <h2>쿠킴한테 추천 받은 <a href="https://www.youtube.com/watch?v=5PDYHNCcjYM">최범균님의 TDD 연습</a>과
+ * <br>@ParameterizedTest, @MethodSource를 함께 연습<br><br>참고: <a href="https://www.baeldung.com/parameterized-tests-junit-5">Baeldung</a>
+ * </h2>
  */
 public class ParameterizedTestAnnotationTest {
 
