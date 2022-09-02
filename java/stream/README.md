@@ -72,7 +72,7 @@ String string=s.chars()
 ```java
 Integer size=Arrays.stream(nums)
         .boxed() // IntStream(원시타입) -> Stream<Integer>(참조타입)
-        .collect(Collectors.collectingAndThen(Collectors.toSet(),set->{return Math.min(set.size(),nums.length/2);
+        .collect(Collectors.collectingAndThen(Collectors.toSet(),set.PracticeSet->{return Math.min(set.PracticeSet.size(),nums.length/2);
         }));
 ```
 
